@@ -23,7 +23,6 @@
     [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationCurveEaseOut animations:^{
         view.transform = CGAffineTransformIdentity;
     } completion:^(BOOL finished){
-        [[objc_getClass("CPDistributedMessagingCenter") centerNamed:@"com.iky1e.remoteView.sb.messaging.center"] sendMessageAndReceiveReplyName:@"kh_display_remote_app" userInfo:nil];
         self.view.frame = (CGRect){CGPointZero, self.view.bounds.size};
     }];
 }

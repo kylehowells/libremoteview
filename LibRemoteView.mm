@@ -63,7 +63,7 @@ static CPDistributedMessagingCenter *messagingCenter = nil;
     if (self) {
         self.layerHost = [[objc_getClass("CALayerHost") alloc] init];
         self.layerHost.anchorPoint = CGPointMake(0,0);
-        self.layerHost.transform = CATransform3DMakeScale(0.5, 0.5, 1);
+        self.layerHost.transform = CATransform3DMakeScale(1/[UIScreen mainScreen].scale, 1/[UIScreen mainScreen].scale, 1);
         self.layerHost.bounds = self.bounds;
         [self.layer addSublayer:self.layerHost];
         update = NO;

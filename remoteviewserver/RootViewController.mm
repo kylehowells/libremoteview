@@ -43,7 +43,7 @@ static BOOL animate = YES;
         MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
         picker.mailComposeDelegate = self;
         
-        //        [picker setSubject:@"Hello from Ankit Vyas!"];
+        //        [picker setSubject:@"Hello from Kyle Howells!"];
         
         // Set up recipients
         //        NSArray *toRecipients = [NSArray arrayWithObject:@"first@example.com"];
@@ -54,13 +54,13 @@ static BOOL animate = YES;
         //        [picker setBccRecipients:bccRecipients];
         
         // Attach an image to the email
-        //        NSString *path = [[NSBundle mainBundle] pathForResource:@"rainy" ofType:@"png"];
+        //        NSString *path = [[NSBundle mainBundle] pathForResource:@"iOS" ofType:@"png"];
         //        NSData *myData = [NSData dataWithContentsOfFile:path];
-        //        [picker addAttachmentData:myData mimeType:@"image/png" fileName:@"rainy"];
+        //        [picker addAttachmentData:myData mimeType:@"image/png" fileName:@"iOS"];
         
         
-        NSString *emailBody = [NSString stringWithFormat:@" - Server info\nApp: %@; Bundle: %@", [UIApplication sharedApplication], [NSBundle mainBundle]];
-        [picker setMessageBody:emailBody isHTML:NO];
+        NSString *emailBody = [NSString stringWithFormat:@"<h3> - Server info</h3><br/><p><b>App:</b> %@; \n <br/> <b>Bundle:</b> %@</p>", [UIApplication sharedApplication], [NSBundle mainBundle]];
+        [picker setMessageBody:emailBody isHTML:YES];
         [self presentModalViewController:picker animated:NO];
         [picker release];
     }
